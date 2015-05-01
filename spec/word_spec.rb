@@ -15,3 +15,11 @@ describe('#save') do
     expect(Word.all()).to(eq([test_word]))
   end
 end
+
+describe('.clear') do
+  it("empties out all the saved words") do
+    Word.new("apple").save()
+    Word.clear()
+    expect(Word.all()).to(eq([]))
+  end
+end
