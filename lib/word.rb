@@ -41,8 +41,8 @@ class Word
     found_word
   end
 
-  define_method(:add_definition) do |definition|
-    @oed.push(definition)
+  define_method(:add_definition) do |term|
+    @oed.push(term)
   end
 
 end

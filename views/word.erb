@@ -1,25 +1,19 @@
-<h3>Word goes here</h3>
-<ul>
-  <li></li>
-</ul>
+<h3><%= @word.name() %></h3>
 
-<p>Add a new defition</p>
-
-
-<a href="/">Home</a>
-
-
-<h1>My Dictionary</h1>
+<h4>Definitions for <%= @word.name() %>:</h4>
 
 <ul>
-<% @word.oed().each() do |entry| %>
-<li><a href="/word/"<% entry.id() %><%= entry.name() %></a></li>
+<% @word.oed.each() do |entry| %>
+<li><a href="/definition/<%= entry.id() %>"><%= entry.name() %></a></li>
 <% end %>
 </ul>
 
-<form action="/word" method="post">
-
+<p>Add a new defition</p>
+<form action="/definition" method="post">
+  <input id='word_id' name='word_id' type='hidden' value='<%= @word.id() %>'>
   <input id='name' name='name' type='text'>
 
   <button type="submit">Add New Definition</button>
 </form>
+
+<a href="/">Home</a>

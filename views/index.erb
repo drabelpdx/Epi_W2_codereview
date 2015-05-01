@@ -1,15 +1,14 @@
 <h1>My Dictionary</h1>
 
 <ul>
-<% @words.each() do |word| %>
-<li><%= word.name() %></li>
-<% end %>
+  <% @words.each() do |word| %>
+    <li><a href="/word/<%= word.id() %>"><%= word.name() %></a></li>
+  <% end %>
 </ul>
 
-
 <p>Add new word here:</p>
+
 <form action="/word" method="post">
   <input id='name' name='name' type='text'>
-
   <button type="submit">Add New Word</button>
 </form>
