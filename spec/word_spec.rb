@@ -23,3 +23,13 @@ describe('.clear') do
     expect(Word.all()).to(eq([]))
   end
 end
+
+describe('.find') do
+  it("returns a word by its id number") do
+    test_word = Word.new("apple")
+    test_word.save()
+    test_word2 = Word.new("dog")
+    test_word.save()
+    expect(Word.find(test_word.id())).to(eq(test_word))
+  end
+end
