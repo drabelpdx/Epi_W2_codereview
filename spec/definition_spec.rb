@@ -7,3 +7,11 @@ describe('#name') do
     expect(test_definition.name()).to(eq("a fruit"))
   end
 end
+
+describe('#save') do
+  it("adds a definition to the array of saved definitions") do
+    test_definition = Definition.new("a fruit")
+    test_definition.save()
+    expect(Definition.all()).to(eq([test_definition]))
+  end
+end
