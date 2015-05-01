@@ -1,14 +1,18 @@
-<h3><%= @word.name() %></h3>
+<h2><%= @word.name() %></h2>
+<br>
+<h4>Definitions:</h4>
 
-<h4>Definitions for <%= @word.name() %>:</h4>
+  <ul>
+    <% @word.oed.each() do |entry| %>
+      <li><a href="/definition/<%= entry.id() %>"><%= entry.name() %></a></li>
+    <% end %>
+  </ul>
 
-<ul>
-<% @word.oed.each() do |entry| %>
-<li><a href="/definition/<%= entry.id() %>"><%= entry.name() %></a></li>
-<% end %>
-</ul>
+<br><br>
+<br><br>
 
-<p>Add a new defition</p>
+<p>Add a definition for <%= @word.name() %></p>
+
 <form action="/definition" method="post">
   <input id='word_id' name='word_id' type='hidden' value='<%= @word.id() %>'>
   <input id='name' name='name' type='text'>
@@ -16,4 +20,5 @@
   <button type="submit">Add New Definition</button>
 </form>
 
+<br><br>
 <a href="/">Home</a>

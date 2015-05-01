@@ -44,5 +44,4 @@ class Word
   define_method(:add_definition) do |term|
     @oed.push(term)
   end
-
 end
