@@ -1,6 +1,11 @@
 require('rspec')
 require('definition')
 
+describe(Definition) do
+  before() do
+    Definition.clear()
+  end
+
 describe('#name') do
   it("returns the text of the definition") do
     test_definition = Definition.new("a fruit")
@@ -32,4 +37,5 @@ describe('.find') do
     test_definition2.save()
     expect(Definition.find(test_definition.id())).to(eq(test_definition))
   end
+end
 end

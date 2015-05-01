@@ -2,6 +2,12 @@ require('rspec')
 require('word')
 require('definition')
 
+describe(Word) do
+  before() do
+    Word.clear()
+  end
+
+
 describe('#name') do
   it("returns the name of the word") do
     test_word = Word.new("apple")
@@ -42,4 +48,5 @@ describe('#add_definition') do
     test_word.add_definition(test_definition)
     expect(test_word.oed()).to(eq([test_definition]))
   end
+end
 end

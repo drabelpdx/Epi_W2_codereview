@@ -1,0 +1,25 @@
+<h3>Word goes here</h3>
+<ul>
+  <li></li>
+</ul>
+
+<p>Add a new defition</p>
+
+
+<a href="/">Home</a>
+
+
+<h1>My Dictionary</h1>
+
+<ul>
+<% @word.oed().each() do |entry| %>
+<li><a href="/word/"<% entry.id() %><%= entry.name() %></a></li>
+<% end %>
+</ul>
+
+<form action="/word" method="post">
+
+  <input id='name' name='name' type='text'>
+
+  <button type="submit">Add New Definition</button>
+</form>
