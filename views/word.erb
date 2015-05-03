@@ -4,7 +4,7 @@
 
   <ul>
     <% @word.oed.each() do |entry| %>
-      <li><a href="/definition/<%= entry.id() %>"><%= entry.name() %></a></li>
+      <li><%= entry.name() %></li>
     <% end %>
   </ul>
 
